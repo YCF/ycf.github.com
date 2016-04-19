@@ -3,5 +3,5 @@ config = {
     sep: ' | ',
     user: 'YCF',
     repo: 'ycf.github.io',
-    per_page: 4
+    per_page: 999
 }
