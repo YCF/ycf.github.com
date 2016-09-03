@@ -1,76 +1,59 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en" class="loading">
 <head>
-    <meta charset="utf-8">
-    <title>Fengz'</title>
-    <link rel="stylesheet" href="slash.css" media="screen" charset="utf-8">
-    <script src="assets/vue.js" charset="utf-8"></script>
-    <script src="assets/vue-router.min.js" charset="utf-8"></script>
-    <script src="assets/vue-resource.min.js" charset="utf-8"></script>
-    <script src="assets/marked.min.js" charset="utf-8"></script>
-    <script src="config.js" charset="utf-8"></script>
-    <script src="slash.js" charset="utf-8"></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="google" content="notranslate" />
+<link rel="icon" href="favicon.png?0" />
+<title> Mirror </title>
+<meta name="author" content="LoeiFy">
+<link rel="stylesheet" href="dist/mirror.css" />
+<script>
+
+// Define
+var config = {
+    user:       'YCF',         // GitHub Username
+    repo:       'ycf.github.com',         // GitHub Repo
+    token:      '911cb946934d7b998932d2dddc06fef564f5ed79',         // GitHub access_token
+    info:       'Do one thing and do it well.',         // About Yourself
+    per_page:   7,          // Per Page Posts Number
+    behance:    '',         // Behance URL
+    dribbble:   '',         // Dribbble URL
+    instagram:  ''          // Instagram URL
+}
+
+</script>
+<script src="dist/libs.js"></script>
+<script src="dist/mirror.js"></script>
 </head>
 
 <body>
-    <div id="wrap">
-        <div id="container">
-            <header class="header">
-                <h1><a href="">./ Fengz' </a></h1>
-                <p>Do one thing and do it well.</p>
-            </header>
-            <div id="loading">Loading... </div>
-            <div id="content">
-                <router-view></router-view>
-            </div>
-        </div>
-    </div>
-    <footer class="footer">
-        <p>
-            Powered by <a href="https://github.com/mastermay/Slash" target="_blank">Slash</a>
-        </p>
-    </footer>
-    <script type="text/template" id="postList">
-        <div class="posts">
-            <div class="post" v-for="post in posts">
-                <h2><a class="title" v-link="{ name: 'post', params: { id: post.number } }">{{ post.title }}</a></h2>
-                <ul class="tags" v-for="label in post.labels">
-                    <li class="tag"><a v-link="{ name: 'label', params: { name: label.name } }">{{label.name}}</a></li>
-                </ul>
-                <span class="time">{{new Date(post.created_at).toLocaleDateString()}}</span>
-            </div>
-        </div>
-        <div class="pagination" v-show="home">
-            <span v-show="prev">
-                <a v-link="{ name: 'page', params: { page: prev } }">prev</a>
-            </span>
-            <span v-show="next">
-                <a v-link="{ name: 'page', params: { page: next } }">next</a>
-            </span>
-        </div>
-        <div class="pagination" v-else>
-            <span v-show="prev">
-                <a v-link="{ name: 'labelPaged', params: { name:label, page: prev } }">prev</a>
-            </span>
-            <span v-show="next">
-                <a v-link="{ name: 'labelPaged', params: { name:label, page: next } }">next</a>
-            </span>
-        </div>
-    </script>
 
-    <script type="text/template" id="postDetail">
-        <article class="post">
-            <h2><a class="title" v-link="{ name: 'post', params: { id: post.number } }">{{ post.title }}</a></h2>
-            <ul class="tags" v-for="label in post.labels">
-                <li class="tag"><a v-link="{ name: 'label', params: { name: label.name } }">{{label.name}}</a></li>
-            </ul>
-            <span class="time">{{new Date(post.created_at).toLocaleDateString()}}</span>
-            <div class="content">
-                {{{ post.body }}}
-            </div>
-        </article>
-    </script>
+<div id="switch"><div class="transition">
+
+<div class="dib" id="main">
+
+    <header id="user"></header>
+
+    <section id="posts"></section>
+
+    <button id="next">More Posts</button>
+
+</div><!--
+
+--><div class="dib">
+
+    <article id="post"></article>
+
+</div>
+
+</div></div>
+
+<footer>
+    <a href="https://github.com/LoeiFy/Mirror" target="_blank">Mirror</a> . 
+    Powered with <span>&hearts;</span> by 
+    <a href="https://github.com" target="_blank">GitHub</a> 
+</footer>
 
 </body>
 
