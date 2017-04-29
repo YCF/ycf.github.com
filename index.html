@@ -1,59 +1,57 @@
 <!DOCTYPE html>
 <html lang="en" class="loading">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="google" content="notranslate" />
-<link rel="icon" href="favicon.png?0" />
-<title> Fengz' Cloud </title>
-<meta name="author" content="Fengz">
-<link rel="stylesheet" href="dist/mirror.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="google" content="notranslate">
+<link rel="icon" href="favicon.png">
+<title>Fengz' Cloud</title>
 <script>
-
-// Define
-var config = {
-    user:       'YCF',         // GitHub Username
-    repo:       'ycf.github.com',         // GitHub Repo
-    token:      '8adb17d3fa9eca44f9e6'+'70d5e61bfeaf6b1fb189',       // GitHub access_token
-    info:       'Do one thing and do it well.',         // About Yourself
-    per_page:   10,          // Per Page Posts Number
-    behance:    '',         // Behance URL
-    dribbble:   '',         // Dribbble URL
-    instagram:  ''          // Instagram URL
-}
-
+window.config = {"title":"Fengz' Cloud","user":"YCF","repo":"ycf.github.com","token":"8adb17d3fa9eca44f9e670d5e61bfeaf6b1fb189","authors":"YCF","per_page":"15","sandbox":"false"}
 </script>
-<script src="dist/libs.js"></script>
-<script src="dist/mirror.js"></script>
+
+<style>html.loading{height:100%;text-align:center}html.loading body{height:100%}html.loading body:before{content:'';width:30px;height:30px;-webkit-border-radius:30px;border-radius:30px;-webkit-animation:loading 1.5s linear forwards infinite;animation:loading 1.5s linear forwards infinite;display:inline-block;border-top:4px solid #0089fa;border-right:4px solid #ff002b;border-bottom:4px solid #ffa900;border-left:4px solid #00a753;vertical-align:middle}html.loading body:after{content:'';display:inline-block;height:100%;vertical-align:middle}html.loading .container{display:none}@keyframes loading{100%{transform:rotate(360deg)}}@-webkit-keyframes loading{100%{-webkit-transform:rotate(360deg)}}</style>
 </head>
 
 <body>
 
-<div id="switch"><div class="transition">
+    <div class="container">
 
-<div class="dib" id="main">
+        <div class="left">
+            <div id="user"></div>
+            <div id="posts"></div>
+            <div class="btns">
+                <button class="button" id="prev">← Newer Posts</button>
+                <button class="button" id="next">Older Posts →</button>
+            </div>
 
-    <header id="user"></header>
+            <div id="footer">
+                Powered by <a href="https://github.com/LoeiFy/Mirror" target="_blank">Mirror</a> & GitHub .
+                <a id="source" target="_blank">Source</a>
+                <span id="sandbox"> | <a>SandBox</a></span>
+            </div>
 
-    <section id="posts"></section>
+            <div class="sandbox">
+                <div id="close">&#x2716;</div>
+                <form id="form" autocomplete="off">
+                    <p>Submit the imformation and preview</p>
+                    <input type="text" name="title" placeholder="Blog Title">
+                    <input type="text" name="user" placeholder="GitHub Username">
+                    <input type="text" name="repo" placeholder="GitHub Repo">
+                    <input type="text" name="authors" placeholder="Authors Filter(Optional)">
+                    <input type="number" name="per_page" placeholder="Number of Per Page">
+                    <button type="submit" name="submit" class="button">Start</button>
+                </form>
+            </div>
+        </div>
 
-    <button id="next">More Posts</button>
 
-</div><!--
+        <div class="right">
+            <div id="post"></div>
+        </div>
 
---><div class="dib">
+    </div>
 
-    <article id="post"></article>
-
-</div>
-
-</div></div>
-
-<footer>
-    Powered with <span>&hearts;</span> by 
-    <a href="https://github.com/LoeiFy/Mirror" target="_blank">Mirror</a> &amp; <a href="https://github.com" target="_blank">GitHub</a> .
-</footer>
-
-</body>
+<script type="text/javascript" src="build.c4688d3ba5719cd2510e.js"></script></body>
 
 </html>
