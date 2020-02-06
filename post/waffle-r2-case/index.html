@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>Waffle rev 2 新外壳的探索 | Fengz</title>
+<meta name="description" content="Do one thing and do it well.">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://sync.sh/favicon.ico?v=1580959247910">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://sync.sh/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://sync.sh">
+        <img class="avatar" src="https://sync.sh/images/avatar.png?v=1580959247910" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://sync.sh">
+        <h1 class="site-title">Fengz</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">Waffle rev 2 新外壳的探索</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2019-05-30</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://sync.sh/tag/rmk">
+                    r/mk
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <figure data-type="image" tabindex="1"><img src="https://sync.sh/post-images/1580957647253.jpeg" alt="" loading="lazy"></figure>
+<p>这段时间深圳嘉立创搞5元打板包邮活动，而且对凯华的矮轴也有点想法，所以就有了这一系列的尝试:</p>
+<ol>
+<li>
+<p>自从看到 OLKB 的 otow 外壳底板后一直想尝试用 PCB 做键盘外壳底板，而且用 PCB 画画是一件很酷的事，不是么。本来画好了一张 40% 键盘的底板，因为嘉立创的活动限制了 PCB 大小在 10 x 10 cm以内，所以只能修改一下做成 4 x 4 MicroPad。效果还是很不错的。</p>
+</li>
+<li>
+<p>既然有了底板，定位版自然就不能少，快速地用导出一个 dxf 放到 kicad ，设置为edge.cut，直接出 gerber 文件。</p>
+</li>
+<li>
+<p>有了定位版和底板自然就少不了核心科技 PCB 了，因为很早就对凯华矮轴种草，所以这次在轴位上放弃了热插拔底座，研究了同时兼容 MX,ALPS,Kailh choc 三种轴的封装，对 waffle rev1进行重新设计，在四个角落里都加了旋钮支持(四选一)，而不是 rev1 中定死的左下角设计。当然,USB口也从 type A 改为时下热门的 type c。</p>
+</li>
+<li>
+<p>焊接调试固件后整体满意，就是凯华矮轴的键帽有点怪，东非大裂谷的缝隙，所以还是放弃在这个板子上焊接矮轴了，不过对凯华矮轴有了一定程度的了解，可能终极 Planck end game会使用。</p>
+</li>
+<li>
+<p>这么酷炫的底板配合全套红色定位板，配合炫酷无敌的 RGB 灯效，没有中框就显得略微遗憾，马上启动 sketchup，画了一个中框，因为固定方式其实早就想透，很顺利，除了没料边缘和键帽太靠近外，其他都是完美的，typc部分更是严丝合缝。</p>
+</li>
+</ol>
+<p>渣图呈上:<br>
+<img src="https://sync.sh/post-images/1580957656229.jpeg" alt="" loading="lazy"></p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://sync.sh/post/yi-xie-you-qu-de-dong-xi">
+              <h3 class="post-title">
+                下一篇：一些有趣的东西
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">Do one thing and do it well.</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  一事精致 便能动人 | <a class="rss" href="https://sync.sh/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>

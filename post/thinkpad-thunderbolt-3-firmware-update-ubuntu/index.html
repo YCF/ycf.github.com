@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>更新ThinkPad 的 Thunderbolt 3 控制器固件 | Fengz</title>
+<meta name="description" content="Do one thing and do it well.">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://sync.sh/favicon.ico?v=1580959247910">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://sync.sh/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://sync.sh">
+        <img class="avatar" src="https://sync.sh/images/avatar.png?v=1580959247910" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://sync.sh">
+        <h1 class="site-title">Fengz</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">更新ThinkPad 的 Thunderbolt 3 控制器固件</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2020-02-06</span>
+            
+          </div>
+          <div class="post-content">
+            <h3 id="无废话版本">无废话版本</h3>
+<p>我的T480s 装的是黑果，联想没有相关工具，最后通过U盘 Ubuntu 19.04 Live CD 使用 fwupdmgr 完成固件更新。</p>
+<!-- more -->
+<hr>
+<h3 id="唠叨版">唠叨版</h3>
+<p>在 v 站了解到联想的 Thunderbolt 3控制器固件有问题，而且问题比较严重：</p>
+<blockquote>
+<p>在 6-12 个月内，USB C 接口会有不同程度的损坏。有的时候会完全损坏，有的时候（通过 USB C 接口） HDMI 输出会损坏。并且，Thunderbolt 控制器会报错。系统也可能会无法通过 USB C 口充电。</p>
+</blockquote>
+<p>影响范围非常广：</p>
+<ul>
+<li>T470s</li>
+<li>T480</li>
+<li>T480s</li>
+<li>T490 / P43s</li>
+<li>T490s</li>
+<li>T570 / P51s</li>
+<li>T580 / P52s</li>
+<li>T590 / P53s</li>
+<li>X1 Carbon 2017 / 5th Gen</li>
+<li>X1 Carbon 2018 / 6th Gen</li>
+<li>X1 Carbon 2019/ 7th Gen</li>
+<li>X1 Yoga 2017 / 2nd Gen</li>
+<li>X1 Yoga 2018 / 3rd Gen</li>
+<li>X1 Yoga 2019/ 4th Gen</li>
+<li>X1 Tablet 2018/ 3rd Gen</li>
+<li>X280</li>
+<li>Yoga 370</li>
+<li>X380 Yoga</li>
+<li>X390</li>
+<li>X390 Yoga</li>
+<li>P51</li>
+<li>P52</li>
+<li>P71</li>
+<li>P72</li>
+</ul>
+<p>在微信上联系联想客服，居然装傻（可能是真的不知道），最后就问我的是不是已经坏了，我表示我没有 Win10 (联想官方只有 Win10 下的驱动和固件更新软件），最后当然是不欢而散了。于是我直接拆掉 T480s 的 SSD，装上 Deskmini 310 里装着 Win10 的 SSD，嗯，不出意外，没有一次启动成功。本着偷懒的思想，我在 reddit 上找了，毕竟机器还是热门的，我将希望寄托在 Linux 上，我也不会傻傻地找Hackintosh (黑苹果) 方案。最后找到了，步骤如下：</p>
+<ol>
+<li>
+<p>下载 Ubuntu 19.04 desktop iso （18.04 不行，用到的工具版本太旧）</p>
+</li>
+<li>
+<p>使用 UltraISO 将 iso 写入到 U 盘。</p>
+</li>
+<li>
+<p>插入 T480s ，F12，U盘启动，Try ubuntu。</p>
+</li>
+<li>
+<p>更新系统源（其实不做也行，都没装软件）<br>
+<code>sudo apt-get update</code></p>
+</li>
+<li>
+<p>启动守护进程<br>
+<code>sudo service fwupd start</code></p>
+</li>
+<li>
+<p>获得能更新的固件设备列表<br>
+<code>sudo fwupdmgr get-devices</code></p>
+</li>
+<li>
+<p>刷新可用更新元数据<br>
+<code>sudo fwupdmgr refresh</code></p>
+</li>
+<li>
+<p>检查哪些设备有可用更新<br>
+<code>sudo fwupdmgr get-updates</code></p>
+</li>
+<li>
+<p>更新固件(需要插上电源，不然不会开始)<br>
+<code>sudo fwupdmgr update</code></p>
+</li>
+</ol>
+<p>最后，更新到固件版本为 20.</p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://sync.sh/post/hello-minimalism">
+              <h3 class="post-title">
+                下一篇：断 舍 离
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">Do one thing and do it well.</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  一事精致 便能动人 | <a class="rss" href="https://sync.sh/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
